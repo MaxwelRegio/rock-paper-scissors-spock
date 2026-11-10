@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #2b1d0e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    /* Forest scene drawn in background.svg (keep it in the same folder) */
+    background: #6f9330 url("background.svg") center / cover no-repeat fixed;
+}
+
+/* Wooden sign title */
+.title {
+    margin-top: 20px;
+    padding: 6px 28px;
+    font-size: 2.2rem;
+    font-weight: 800;
+    background: #deb887;
+    border: 3px solid #a0703c;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.35);
+}
+
+/* Only the active screen is visible */
+.screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin-top: 12vh;
+}
+
+.screen.active {
+    display: flex;
+}
+
+/* Wooden buttons */
+.wood-btn {
+    width: 300px;
+    height: 92px;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #2b1d0e;
+    background: #deb887;
+    border: 3px solid #a0703c;
+    border-radius: 6px;
+    box-shadow: 0 5px 0 #8b5a2b, 0 8px 12px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: transform 0.1s, background 0.2s;
+}
+
+.wood-btn:hover {
+    background: #e8c79a;
+    transform: translateY(-2px);
+}
+
+.wood-btn:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #8b5a2b, 0 3px 6px rgba(0, 0, 0, 0.35);
+}
+
+.wood-btn.small {
+    width: 160px;
+    height: 56px;
+    font-size: 1.2rem;
+}
+
+/* Parchment panel for game, rules and settings */
+.panel {
+    width: min(560px, 90vw);
+    padding: 24px;
+    text-align: center;
+    background: rgba(245, 222, 179, 0.95);
+    border: 3px solid #a0703c;
+    border-radius: 8px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.moves {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.moves .wood-btn {
+    width: 120px;
+    height: 60px;
+    font-size: 1rem;
+}
+
+#result {
+    min-height: 1.5em;
+}
+
+/* Radio buttons on the game screen */
+form {
+    text-align: left;
+    align-self: center;
+    font-size: 1.15rem;
+    line-height: 1.9;
+}
+
+input[type="radio"] {
+    accent-color: #8b5a2b;
+    transform: scale(1.3);
+    margin-right: 8px;
+}
+
+.panel .wood-btn.small {
+    align-self: center;
+}
+
+input {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 8px;
+    border: 2px solid #a0703c;
+    border-radius: 4px;
+    text-align: center;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>U.F.O. Duel</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h1 class="title">🛸 U.F.O. Duel 🛸</h1>
+
+    <!-- MENU SCREEN -->
+    <section id="menu" class="screen active">
+        <button type="button" class="wood-btn" onclick="startGame('classic')">Play Classic</button>
+        <button type="button" class="wood-btn" onclick="startGame('spock')">Play Spock</button>
+        <button type="button" class="wood-btn" onclick="showScreen('rules')">Rules</button>
+        <button type="button" class="wood-btn" onclick="showScreen('settings')">Settings</button>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section id="game" class="screen">
+        <div class="panel">
+            <h2 id="modeTitle">Rock Paper Scissors</h2>
+
+            <form>
+                <input type="radio" id="rock" name="rock_paper_scissors" value="Rock">
+                <label for="rock">Rock</label><br>
+                <input type="radio" id="paper" name="rock_paper_scissors" value="Paper">
+                <label for="paper">Paper</label><br>
+                <input type="radio" id="scissors" name="rock_paper_scissors" value="Scissors">
+                <label for="scissors">Scissors</label><br>
+
+                <!-- Only shown in Spock mode -->
+                <div id="spockOptions">
+                    <input type="radio" id="lizard" name="rock_paper_scissors" value="Lizard">
+                    <label for="lizard">Lizard</label><br>
+                    <input type="radio" id="spock" name="rock_paper_scissors" value="Spock">
+                    <label for="spock">Spock</label><br>
+                </div>
+            </form>
+
+            <button type="button" class="wood-btn small" onclick="rockPaperScissors()">Click</button>
+
+            <h5 id="choice"></h5>
+            <h5 id="compChoice"></h5>
+            <h3 id="result"></h3>
+            <h5 id="score"></h5>
+            <h5 id="counter"></h5>
+        </div>
+        <button type="button" class="wood-btn small" onclick="showScreen('menu')">Back</button>
+    </section>
+
+    <!-- RULES SCREEN -->
+    <section id="rules" class="screen">
+        <div class="panel">
+            <h2>Rules</h2>
+            <h4>Classic</h4>
+            <p>Rock beats Scissors · Scissors beats Paper · Paper beats Rock</p>
+            <h4>Spock</h4>
+            <p>Scissors cuts Paper · Paper covers Rock · Rock crushes Lizard ·
+                Lizard poisons Spock · Spock smashes Scissors · Scissors decapitates Lizard ·
+                Lizard eats Paper · Paper disproves Spock · Spock vaporizes Rock ·
+                Rock crushes Scissors</p>
+        </div>
+        <button type="button" class="wood-btn small" onclick="showScreen('menu')">Back</button>
+    </section>
+
+    <!-- SETTINGS SCREEN -->
+    <section id="settings" class="screen">
+        <div class="panel">
+            <h2>Settings</h2>
+            <label for="playerName">Your name</label>
+            <input type="text" id="playerName" value="You">
+
+            <label for="winTarget">First to (wins)</label>
+            <input type="number" id="winTarget" value="3" min="1" max="10">
+        </div>
+        <button type="button" class="wood-btn small" onclick="showScreen('menu')">Back</button>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
